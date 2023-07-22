@@ -2,7 +2,7 @@
  * Moves the item of the `array` from the given `index`
  * to the end of this `array`
  */
-export function moveArrayElementToEnd<T>(array: T[], index: number) {
+export function moveElementToEnd<T>(array: T[], index: number) {
 	if (index >= 0 && index < array.length) {
 		const element = array.splice(index, 1)[0];
 		array.push(element);

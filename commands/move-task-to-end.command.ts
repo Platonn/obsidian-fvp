@@ -1,11 +1,10 @@
 import { Command, Editor, MarkdownView } from "obsidian";
-import { moveArrayElementToEnd } from "./shared/move-array-element-to-end";
+import { moveElementToEnd } from "./shared/move-element-to-end";
 
 /**
- * Resets the preselection for all tasks,
- * i.e. turns empty checkboxes to bullet points.
+ * Moves the task at the current line to the end of the list.
  *
- * Note: filled checkboxes remain untouched
+ * Note: it doesn't matter if the task is preselected or not.
  */
 export const moveTaskToEnd_command: Command = {
 	id: "moveTaskToEnd",
@@ -13,8 +12,15 @@ export const moveTaskToEnd_command: Command = {
 	editorCallback: (editor: Editor, view: MarkdownView) => {
 		const currentLineNumber = editor.getCursor().line;
 		const lines = editor.getValue().split("\n");
-		const updatedLines = moveArrayElementToEnd(lines, currentLineNumber);
+		const updatedLines = moveElementToEnd(lines, currentLineNumber);
 		editor.setValue(updatedLines.join("\n"));
+
+		// move cursor back to the original line number
+		const currentLineLength = updatedLines[currentLineNumber].length;
+		editor.setCursor({
+			line: currentLineNumber,
+			ch: currentLineLength,
+		});
 	},
 };
 
