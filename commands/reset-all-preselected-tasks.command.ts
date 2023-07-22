@@ -7,16 +7,20 @@ import { convertCheckboxToBullet } from "./shared/convert-checkbox-to-bullet";
  *
  * Note: filled checkboxes remain untouched
  */
-export const resetAllPreselectedTasks: Command = {
+export const resetAllPreselectedTasks_command: Command = {
 	id: "resetAllPreselectedTasks",
 	name: "Reset all preselected tasks",
 	editorCallback: (editor: Editor, view: MarkdownView) => {
-		convertAllCheckboxToBullet(editor);
+		const lines = editor.getValue().split("\n");
+		const linesConverted = lines.map(convertCheckboxToBullet);
+		editor.setValue(linesConverted.join("\n"));
 	},
 };
 
-function convertAllCheckboxToBullet(editor: Editor): void {
-	const lines = editor.getValue().split("\n");
-	const linesConverted = lines.map(convertCheckboxToBullet);
-	editor.setValue(linesConverted.join("\n"));
-}
+/*
+TODO: add specs:
+- can convert 1 checkbox line 
+- can convert many checkboxes
+- other bullets remain untouched
+- filled checkboxes remain untouched
+*/

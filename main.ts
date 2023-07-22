@@ -1,4 +1,5 @@
-import { resetAllPreselectedTasks } from "commands/reset-all-preselected-tasks";
+import { moveTaskToEnd_command } from "commands/move-task-to-end.command";
+import { resetAllPreselectedTasks_command } from "commands/reset-all-preselected-tasks.command";
 import { App, Plugin, PluginSettingTab, Setting } from "obsidian";
 
 interface MyPluginSettings {
@@ -15,8 +16,8 @@ export default class MyPlugin extends Plugin {
 	async onload() {
 		await this.loadSettings();
 
-		// This adds an editor command that can perform some operation on the current editor instance
-		this.addCommand(resetAllPreselectedTasks);
+		this.addCommand(resetAllPreselectedTasks_command);
+		this.addCommand(moveTaskToEnd_command);
 
 		// This adds a settings tab so the user can configure various aspects of the plugin
 		this.addSettingTab(new SampleSettingTab(this.app, this));
