@@ -17,10 +17,7 @@ export const moveTaskToEnd_command: Command = {
 
 		// move cursor back to the original line number
 		const currentLineLength = updatedLines[currentLineNumber].length;
-		editor.setCursor({
-			line: currentLineNumber,
-			ch: currentLineLength,
-		});
+		editor.setCursor(currentLineNumber, currentLineLength);
 	},
 };
 
