@@ -9,6 +9,7 @@ import { moveElementToEnd } from "./shared/move-element-to-end";
 export const moveTaskToEnd_command: Command = {
 	id: "moveTaskToEnd",
 	name: "Move task to the end",
+	icon: "arrow-down-to-line",
 	editorCallback: (editor: Editor, view: MarkdownView) => {
 		const currentLineNumber = editor.getCursor().line;
 		const lines = editor.getValue().split("\n");
