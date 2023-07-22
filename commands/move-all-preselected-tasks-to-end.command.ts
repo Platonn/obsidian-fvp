@@ -8,7 +8,7 @@ import { moveManyElementsToEnd } from "./shared/move-many-elements-to-end";
 
 /**
  * Moves all preselected tasks to end of list.
- * Removes preselection for all but the first one.
+ * Removes preselection for all but the last one.
  * Reverses them.
  * Marks the first line in the list as preselected.
  * Moves cursor to the end of the list.
@@ -17,7 +17,7 @@ import { moveManyElementsToEnd } from "./shared/move-many-elements-to-end";
  */
 export const moveAllPreselectedTasksToEnd_command: Command = {
 	id: "moveAllPreselectedTasksToEnd",
-	name: "Move all preselected tasks to end. Remove preselection for all but the first one. Reverse them.",
+	name: "Move all preselected tasks to end. Remove preselection for all but the last one. Reverse them.",
 	editorCallback: (editor: Editor, view: MarkdownView) => {
 		const lines = editor.getValue().split("\n");
 

@@ -17,7 +17,7 @@ This is a plugin for Obsidian providing utils for working with FVP system of Mar
 
 -   [x] reset preselection of all tasks (i.e. turn every empty checkbox into a bullet point; filled checkboxes remain untouched)
 -   [x] move task to end
--   [x] move all preselected tasks to end, remove preselection for all but the first one, reverse them
+-   [x] move all preselected tasks to end, remove preselection for all but the last one, reverse them
 
 ## Best experienced when used with Plugins
 
