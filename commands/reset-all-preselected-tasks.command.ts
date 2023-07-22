@@ -10,7 +10,7 @@ import { convertCheckboxToBullet } from "./shared/convert-checkbox-to-bullet";
 export const resetAllPreselectedTasks_command: Command = {
 	id: "resetAllPreselectedTasks",
 	name: "Reset all preselected tasks",
-	icon: "lucide-undo-dot",
+	icon: "list",
 	editorCallback: (editor: Editor, view: MarkdownView) => {
 		const lines = editor.getValue().split("\n");
 		const linesConverted = lines.map(convertCheckboxToBullet);

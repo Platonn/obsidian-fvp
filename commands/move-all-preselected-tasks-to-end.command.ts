@@ -18,7 +18,7 @@ import { moveManyElementsToEnd } from "./shared/move-many-elements-to-end";
 export const moveAllPreselectedTasksToEnd_command: Command = {
 	id: "moveAllPreselectedTasksToEnd",
 	name: "Move all preselected tasks to end. Remove preselection for all but the last one. Reverse them.",
-	icon: "info",
+	icon: "sort-desc",
 	editorCallback: (editor: Editor, view: MarkdownView) => {
 		const lines = editor.getValue().split("\n");
 
