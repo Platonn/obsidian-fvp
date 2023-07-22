@@ -1,7 +1,7 @@
 {
 	"id": "obsidian-fvp",
 	"name": "Obsidian FVP Plugin",
-	"version": "0.1.2",
+	"version": "0.2.0",
 	"minAppVersion": "0.15.0",
 	"description": "This is a plugin for Obsidian providing utils for working with FVP system of Mark Forster. For more see http://markforster.squarespace.com/blog/2021/11/16/the-final-version-perfected-fvp-instructions-reposted.html",
 	"isDesktopOnly": false
