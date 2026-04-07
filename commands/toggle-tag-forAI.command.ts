@@ -6,7 +6,7 @@ import { Command, Editor, MarkdownView } from "obsidian";
  *
  * If it's a bullet or checkbox, include it in the beginning of the content of the bullet/checkbox
  */
-export const moveTaskToEnd_command: Command = {
+export const toggleTagForAI_command: Command = {
 	id: "toggleTagForAI",
 	name: "Toggle Tag #forAI",
 	icon: "hashtag",

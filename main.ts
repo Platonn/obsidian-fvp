@@ -1,6 +1,7 @@
 import { moveAllPreselectedTasksToEnd_command } from "commands/move-all-preselected-tasks-to-end.command";
 import { moveTaskToEnd_command } from "commands/move-task-to-end.command";
 import { resetAllPreselectedTasks_command } from "commands/reset-all-preselected-tasks.command";
+import { toggleTagForAI_command } from "commands/toggle-tag-forAI.command";
 import { App, Plugin, PluginSettingTab, Setting } from "obsidian";
 
 interface MyPluginSettings {
@@ -20,6 +21,7 @@ export default class MyPlugin extends Plugin {
 		this.addCommand(resetAllPreselectedTasks_command);
 		this.addCommand(moveTaskToEnd_command);
 		this.addCommand(moveAllPreselectedTasksToEnd_command);
+		this.addCommand(toggleTagForAI_command);
 
 		// This adds a settings tab so the user can configure various aspects of the plugin
 		this.addSettingTab(new SampleSettingTab(this.app, this));
@@ -31,7 +33,7 @@ export default class MyPlugin extends Plugin {
 		this.settings = Object.assign(
 			{},
 			DEFAULT_SETTINGS,
-			await this.loadData()
+			await this.loadData(),
 		);
 	}
 
@@ -63,7 +65,7 @@ class SampleSettingTab extends PluginSettingTab {
 					.onChange(async (value) => {
 						this.plugin.settings.mySetting = value;
 						await this.plugin.saveSettings();
-					})
+					}),
 			);
 	}
 }
